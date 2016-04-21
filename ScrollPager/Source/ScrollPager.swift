@@ -36,7 +36,7 @@ import UIKit
 	
 	private var selectedIndex = 0
 	private let indicatorView = UIView()
-	private var buttons = [UIButton]()
+	public var buttons = [UIButton]()
 	private var views = [UIView]()
 	private var animationInProgress = false
 	@IBOutlet public weak var delegate: ScrollPagerDelegate!
@@ -252,6 +252,7 @@ import UIKit
 			button.frame = CGRectMake(width * CGFloat(i), 0, width, height)
 			button.setTitleColor((i == selectedIndex) ? selectedTextColor : textColor, forState: .Normal)
 			button.titleLabel?.font = (i == selectedIndex) ? selectedFont : font
+            button.selected = (i == selectedIndex)
 		}
 	}
 	
